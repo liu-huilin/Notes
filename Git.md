@@ -1,15 +1,19 @@
 ## Git命令
 
+#### 初始化
+
 ```bash
 # 设定名字
 git config --global  user.name  "xxxx"  
 # 设定邮箱
 git config --global  user.email  “xxxx”  
 # 查看配置
-git config --list       
+git config --list    
+# 修改默认分支名称为main https://blog.csdn.net/y_s_jun/article/details/117433339
+git config --global init.defaultBranch main
 ```
 
-
+#### git基本使用
 
 ```bash
 # 将当前目录初始化为可以管理的仓库
@@ -25,8 +29,9 @@ git  diff
 # 查看提交记录
 git  log 
 # 回退到上一个版本（【n个^表示回退到前n个版本，或~n】）
-git  reset  --hard  HEAD^ 
-# 查看命令历史
+# 慎重使用！！！！！！会删掉已修改的内容
+git  reset  --hard  HEAD^   
+# 查看命令历史 
 git  reflog 
 ```
 
@@ -46,7 +51,7 @@ git  reflog
 >
 > 如果C就是修改，现在又要改回来，将来可能再改成C，那你就revert
 
-
+#### 分支
 
 ```bash
 # 1.查看所有分支
@@ -55,6 +60,11 @@ git branch -a
 git branch
 # 3.切换分支
 git checkout 分支名
+# 4.合并分支，将分支bran_1合并到主分支
+git merge bran_1
+# 5.删除分支
+git branch -D bran_1
+
 ```
 
 
@@ -82,6 +92,14 @@ git push -u origin main # 将本地main分支的所有内容推送到远程库
  git pull origin master  #拉取远程代码
 ```
 
-.gitignore文件模板
+**.gitignore文件模板**
 
  https://github.com/github/gitignore/blob/master/Python.gitignore
+
+**执行 git branch -M main时，提示 error: refname refs/heads/master not found**
+
+https://blog.csdn.net/weixin_39609665/article/details/111826113
+
+**ssh配置**：
+
+https://segmentfault.com/a/1190000013154540con
