@@ -30,6 +30,14 @@ nohup python -u main.py > ./log.txt 2>&1 &
 
 
 
+##### 查看进程
+
+```
+ps -f -p PID
+```
+
+
+
 ##### 同时打印到终端和文件
 
 ```
@@ -44,7 +52,13 @@ python test.py | tee output.txt
 python test.py | tee -a output.txt
 ```
 
+##### 查看linux发行版本
 
+```
+cat /etc/issue
+```
+
+release文件通常被视为操作系统的标识，在/ect目录下放置了很多记录着发行版本各种信息的文件。
 
 ### 文件操作
 
@@ -72,6 +86,8 @@ tar -zxvf filename.tar.gz
 将/home/wwwroot/xahot/ 这个目录下所有文件和文件夹打包为当前目录下的xahot.zip
 
 zip –q –r xahot.zip /home/wwwroot/xahot
+
+unzip -d /home/path data.zip # 将data.zip解压到/home/path文件夹
 ```
 
 

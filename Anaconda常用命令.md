@@ -20,6 +20,17 @@ conda  deactivate   # 退出环境
 conda create -n 新环境名 --clone 旧环境名  # 克隆已有环境
 ```
 
+```
+# 不同服务器克隆环境
+1、将服务器A上的环境打包（打包envs路径下对应的环境的文件夹），传输到另一个服务器
+2、解压打包好的环境到某路径path
+3、克隆
+conda create -n 新环境名 --clone path
+
+注意：该方法只能克隆通过conda安装的包，pip安装的得重新安装，反正主要就是pytorch等包比较大、难安装，有这个就够了。
+# 参考：https://blog.csdn.net/qq_38262728/article/details/88744268
+```
+
 
 
 ##### 镜像源的设置
