@@ -69,7 +69,7 @@ $$
 
 RN 就是加了个注意力，在relation module那里，它不是比较support set和 query，而是直接将query和每类support set的平均点concat，再用一个网络去进行分类
 
-
+![](https://gitee.com/liu-huilin/markdownimg/raw/main/img2022/notes_few_shot_learning_rn1.png)
 
 #### 参考博文
 
@@ -91,7 +91,7 @@ RN 就是加了个注意力，在relation module那里，它不是比较support 
 
 #### 具体
 
-![](https://gitee.com/liu-huilin/markdownimg/raw/main/img2022/notes_few_shot_learning_rn1.png)
+
 
 ### MatchingNet
 

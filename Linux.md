@@ -100,6 +100,16 @@ CUDA_VISIBLE_DEVICES=1 python main.py
 
 
 
+### ssh
+
+安装
+
+```
+apt install openssh-server
+```
+
+
+
 ### vim
 
 ```

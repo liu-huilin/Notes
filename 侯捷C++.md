@@ -74,3 +74,129 @@ public:
 }
 ```
 
+
+
+# 面向对象（II）
+
+### 转换函数
+
+转换函数即conversion function，主要用于对象之间的转换。
+
+```c++
+class Fraction
+{
+public:
+    explicit Fraction(int num, int den=1) : m_numberator(num), m_denominator(den) {}
+
+    // 转换函数，可将此对象转换为double
+    operator double() const
+    {
+        return ( (double) m_numberator / m_denominator);
+    }
+private:
+    int m_numberator;  // 分子
+    int m_denominator; // 分母
+};
+```
+
+其中的`operator double()`就是转换函数，**这个函数不需要写返回值类型**
+
+```c++
+ Fraction f(3, 5);
+ double d = 4 + f; // 将f转换为double类型的0.6，
+```
+
+当然，也可以将其他类型转换为`Fraction`，如：
+
+```c++
+class Fraction
+{
+public:
+    Fraction(int num, int den=1) : m_numberator(num), m_denominator(den) {}
+    
+    Fraction operator+ (const Fraction& f)
+    {
+        return Fraction(m_numberator + f.m_numberator, m_denominator + f.m_denominator);
+    }
+
+private:
+    int m_numberator;  // 分子
+    int m_denominator; // 分母
+};
+```
+
+
+
+```c++
+Fraction f(3, 5);
+Fraction d2 = f + 4; //调用non-explicit ctor，将4转换为Fraction(4, 1)
+```
+
+`explicit`只能用于修饰只有一个参数的类的构造函数（或者只有第一个参数没给定默认值，其他参数都有默认值的构造函数），其作用是表明该构造函数是显式的，而不是隐式的，与其对应的是`implicit`，类的构造函数默认声明为`implicit`，即隐式。
+
+```c++
+Fraction d = 4;
+```
+
+在C++中，如果构造函数只有一个参数（或者只有第一个参数没给定默认值，其他参数都有默认值），那么在编译的时候就会有一个缺省的转换操作：将该构造函数对应数据类型的数据转换为该类对象，因此，上述的代码会将int类型的4隐式转换为Fraction。`explicit`的作用就是防止类构造函数的隐式自动转换，用法如下：
+
+```c++
+class Fraction
+{
+public:
+    explicit Fraction(int num, int den=1) : m_numberator(num), m_denominator(den) {}
+};
+```
+
+
+
+### 智能指针
+
+> https://www.cnblogs.com/tenosdoit/p/3456704.html
+
+> https://blog.csdn.net/sjp11/article/details/123899141
+
+使用智能指针是为了更好地进行内存管理，自动delete释放对象的内存。c++中有四个智能指针: auto_ptr, shared_ptr, weak_ptr, unique_ptr 其中后三个是c++11支持，并且第一个已经被c++11弃用。
+
+使用智能制造需要包含头文件`#include <memory>`
+
+#### 迭代器
+
+迭代器本质上可以看作智能指针
+
+### 仿函数
+
+重载小括号运算符的类
+
+
+
+### 模板特化
+
+全特化：指定所有的模板类别
+
+```c++
+template<>
+class A<int, char>
+{
+
+};
+```
+
+偏特化：指定部分模板类别，一定是从前往后开始
+
+```c++
+template<typename T>
+class A<int, T> //第一个是int，后面随意
+{
+
+};
+```
+
+```c++
+template<typename T1, typename T2>
+class A<T1*, T2*> //指定是指针类型，具体什么指针随意
+{
+
+};
+```
+
