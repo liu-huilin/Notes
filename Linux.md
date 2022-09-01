@@ -108,6 +108,20 @@ CUDA_VISIBLE_DEVICES=1 python main.py
 apt install openssh-server
 ```
 
+### pip
+
+临时使用清华源
+
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+设置清华源为默认
+
+```
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
 
 
 ### vim

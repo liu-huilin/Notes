@@ -29,3 +29,20 @@ K：键（key）
 
 V：值（value）
 
+
+
+### self-attention
+
+![](https://gitee.com/liu-huilin/markdownimg/raw/main/img2022/note_attention_selfa1.png)
+
+即，输入N个向量，输出N个向量，**N事先未知**。
+
+具体的计算步骤如下：
+
+![](https://gitee.com/liu-huilin/markdownimg/raw/main/img2022/note_attention_selfa2.png)
+
+![](https://gitee.com/liu-huilin/markdownimg/raw/main/img2022/note_attention_selfa3.png)
+
+即self-attention输入为a，输出为b，其中，$W^k$、$W^q$和$W^v$是需要训练的参数，写成矩阵形式，公式如下：
+
+![](https://gitee.com/liu-huilin/markdownimg/raw/main/img2022/note_attention_selfa4.png)

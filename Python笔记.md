@@ -221,6 +221,10 @@ finally:
 
 
 
+## 优秀博客
+
+深入探讨 Python 的 import 机制：实现远程导入模块：https://zhuanlan.zhihu.com/p/269633294
+
 ### 面向对象
 
 #### 基本知识
