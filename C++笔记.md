@@ -80,6 +80,27 @@ p.func();
 Person::func();
 ```
 
+##### Lambda函数
+
+基本语法
+
+```c++
+[capture](parameters) -> return_type { /* ... */ }
+/*
+capture：捕获外部变量的方式
+    []表示不捕获任何变量
+  	[capture]表示以值传递方式捕获capture
+  	[=]表示以值传递方式捕获所有父作用域的变量（包括this）
+  	[&capture]表示以引用方式捕获capture
+  	[&]表示以引用方式捕获所有父作用域的变量（包括this）
+  	&和=可以混用，如[x, &y]
+parameters：形参
+return_type：返回值类型，Lambda表达式的返回类型会自动推导，通常可以不写
+*/
+```
+
+> 详细参考：https://blog.csdn.net/qq_37085158/article/details/124626913
+
 ##### C++对象模型和this指针
 
 在C++中，类的成员变量和成员函数分开存储，只有非静态成员变量才属于类的具体对象。
@@ -729,7 +750,7 @@ m.insert(pair<int, int>(1, 10)); // map中所有的数据都是成对出现的�
 
 
 
-#### 函数对象
+#### 函数对象（仿函数）
 
 ##### 概念
 
