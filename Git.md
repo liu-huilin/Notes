@@ -33,6 +33,9 @@ git  log
 git  reset  --hard  HEAD^   
 # 查看命令历史 
 git  reflog 
+
+# 将本次commit和上一次commit合并成一个
+git commit --amend
 ```
 
 > 如果已经有A -> B -> C，想回到B：
@@ -86,7 +89,7 @@ git push -u origin main # 将本地main分支的所有内容推送到远程库
 
 
 
-#### 2、
+#### 2、杂七杂八
 
 ```bash
  git pull origin master  #拉取远程代码
@@ -103,3 +106,16 @@ https://blog.csdn.net/weixin_39609665/article/details/111826113
 **ssh配置**：
 
 https://segmentfault.com/a/1190000013154540con
+
+
+
+#### 3、pip安装github的包网络断开
+
+> [Python中pip如何安装github上的一个包](https://blog.csdn.net/qq_43391414/article/details/127480160)
+
+下载仓库到本地，执行命令：
+
+```bash
+pip install .
+```
+

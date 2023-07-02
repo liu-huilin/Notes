@@ -121,3 +121,4 @@ support set 和 query 提取完特征之后，直接用cosine距离 衡量query�
 
 - **Inductive**：只有support set可见
 - **Transductive**：support set和query set都可见
+
